@@ -28,7 +28,7 @@ public class BarApplication {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 
-				registry.addMapping("/**").allowedOrigins("https://miporfoliowebfront.web.app");
+				registry.addMapping("/**").allowedOrigins("https://miporfoliowebfront.web.app","http://localhost:4200/");
 			}
 		};
 	}
@@ -36,7 +36,7 @@ public class BarApplication {
 	public CorsFilter corsFilter() {
 		CorsConfiguration corsConfiguration = new CorsConfiguration();
 		corsConfiguration.setAllowCredentials(true);
-		corsConfiguration.setAllowedOrigins(Arrays.asList("https://miporfoliowebfront.web.app"));
+		corsConfiguration.setAllowedOrigins(Arrays.asList("https://miporfoliowebfront.web.app","http://localhost:4200/"));
 
 		corsConfiguration.setAllowedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "Content-Type",
 				"Accept", "Authorization", "Origin, Accept", "X-Requested-With",
