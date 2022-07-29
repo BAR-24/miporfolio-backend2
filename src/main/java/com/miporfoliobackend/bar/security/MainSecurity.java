@@ -20,7 +20,7 @@ import com.miporfoliobackend.bar.security.service.UserDatailsServiceImpl;
 
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
+
 public class MainSecurity extends WebSecurityConfigurerAdapter {
    
     @Autowired
