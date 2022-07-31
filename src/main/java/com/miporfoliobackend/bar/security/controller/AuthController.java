@@ -31,7 +31,7 @@ import com.miporfoliobackend.bar.security.service.RolService;
 import com.miporfoliobackend.bar.security.service.UsuarioService;
 
 @RestController
-@RequestMapping("/auth")
+
 
 public class AuthController {
 
@@ -47,7 +47,7 @@ public class AuthController {
     JwtProvider jwtProvider;
 
    
-    @PostMapping("/nuevo")
+    @RequestMapping("/auth/nuevo")
     public ResponseEntity<?> nuevo(@Valid @RequestBody NuevoUsuario nuevoUsuario, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
             return new ResponseEntity(new Mensaje("Error en datos ingresados"), HttpStatus.BAD_REQUEST);
@@ -75,7 +75,7 @@ public class AuthController {
         return new ResponseEntity<>(new Mensaje("Usuario guardado"),HttpStatus.CREATED);
     }
 
-    @PostMapping("/login")
+    @RequestMapping("/auth/login")
     public ResponseEntity<JwtDto> login (@Valid @RequestBody LoginUsuario loginUsuario, BindingResult bindingResult){
 
         if(bindingResult.hasErrors()){
